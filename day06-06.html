@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    <!--    {{age}}
+        <button @click="jia()">++</button>
+        <button @click="jian()">&#45;&#45;</button>-->
+        {{age}}
+        <gyk @add="jia()" @delete="jian()" :age="age"></gyk>
+    </div>
+</body>
+</html>
+<script>
+    var zj={
+        template:"<div>" +
+            "<button  @click='add()'>++</button>" +
+            "<button @click='dele()'>--</button>" +
+            "</div>",
+        methods:{
+            add(){
+                this.$emit("add")
+            },
+            dele(){
+                this.$emit("delete")
+            },
+        },
+        props:["age"]
+    };
+
+    var app=new Vue({
+        el:"#app",
+        data:{age:10
+        },
+        methods:{
+            jia(){
+                this.age++;
+            },
+            jian(){
+                this.age--;
+            }
+        },
+        components:{
+            gyk:zj
+        }
+
+    });
+
+</script>
