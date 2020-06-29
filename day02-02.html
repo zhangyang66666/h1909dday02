@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+        <input type="checkbox" value="足球" v-model="hobby">足球
+    <input type="checkbox" value="蓝球" v-model="hobby">篮球
+    <input type="checkbox" value="排球" v-model="hobby">排球
+    <input type="checkbox" value="品牌" v-model="hobby">乒乓球
+</div>
+
+</body>
+</html>
+<script>
+     var app=new Vue({
+         el:"#app",
+         data:{
+           hobby:[],
+
+         }
+
+
+     })
+
+</script>
